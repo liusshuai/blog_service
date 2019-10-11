@@ -8,8 +8,8 @@ const transporter = nodemailer.createTransport({
     secureConnection: true,
     port: 465,
     auth: {
-        user: 'yigehaoren_Gdoer@163.com',
-        pass: 'mijian2019'
+        user: 'yigehaoren_Gdoer@163.com', // 这里改成你自己的邮箱地址
+        pass: '******' // 这是代理密码，具体如何生成请百度
     }
 });
 
