@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding-bottom: 30px;
+        }
+        .title{
+            text-align: center;
+        }
+        table{
+            padding: 20px;
+            border: 1px solid gray;
+        }
+        table{
+            text-align: center;
+        }
+        table th, table td{
+            width: 200px;
+        }
+        .create input{
+            display: inline-block;
+            width: 500px;
+            height: 30px;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+        .desc{
+            display: block;
+            width: 800px;
+            height: 100px;
+        }
+        .content{
+            display: block;
+            width: 800px;
+            height: 500px;
+        }
+        textarea{
+            margin-top: 20px;
+        } 
+        .tijiao{
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">文章测试页面</h1>
+    <div class="list">
+        <h3>文章列表</h3>
+        <table id="articleList" style="border-collapse: collapse;">
+            <tr>
+                <th>标题</th>
+                <th>作者</th>
+                <th>标签</th>
+                <th>频道</th>
+                <th>创建时间</th>
+                <th>更新时间</th>
+                <th>操作</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="create">
+        <h3>新建文章</h3>
+        <input type="text" id="title" placeholder="文章标题"/>
+        <input type="text" id="tag" placeholder="文章标签"/><br>
+        <input type="text" id="channel" placeholder="文章分类"/>
+        <input type="text" id="author" placeholder="文章作者"/>
+        <textarea class="desc" id="desc" >文章简介</textarea>
+        <textarea class="content" id="content" >文章内容</textarea>
+        <button type="button" class="tijiao" id="submit">提交</button>
+    </div>
+
+    <div class="loginBox">
+        登录测试
+        <input id="account" placeholder="账号"/>
+        <input id="password" placeholder="密码"/>
+        <button id="loginBtn" type="button">登录</button>
+        <button id="logoutBtn" type="button">退出</button>
+    </div>
+
+    <div class="loginBox">
+        注册测试
+        <input id="account2" placeholder="账号"/>
+        <input id="password2" placeholder="密码"/>
+        <input id="avator" placeholder="头像" />
+        <input id="intro" placeholder="介绍" />
+        <input id="nickname" placeholder="昵称" />
+        <button id="registerBtn" tyope="button">注册</button>
+    </div>
+
+    <div class="updateBox">
+        更新信息测试
+        <input id="account3" placeholder="账号"/>
+        <input id="password3" placeholder="密码"/>
+        <input id="avator3" placeholder="头像" />
+        <input id="intro3" placeholder="介绍" />
+        <input id="nickname3" placeholder="昵称" />
+        <input id="bgcover3" placeholder="背景" />
+        <button id="updateBtn" tyope="button">更新</button>
+    </div>
+
+    <div class="newChannelBox">
+        <input class="channelName" placeholder="请输入频道名字" />
+        <input class="channelDesc" placeholder="频道简介简介" />
+        <input class="channelCover" placeholder="频道封面" />
+        <button type="button" class="createChannelBtn">创建</button>
+    </div>
+
+    <div class="deleteChannelBox">
+        <input class="deleteChannel" placeholder="输入要删除频道的id" />
+        <button type="button" class="deleteChannelBtn">删除</button>
+    </div>
+
+    <div class="deleteArticleBox">
+        <input class="deleteArticle" placeholder="输入要删除文章的id" />
+        <button type="button" class="deleteArticleBtn">删除</button>
+    </div>
+
+    <div class="update">
+        <h3>更新文章</h3>
+        <input type="text" id="aid" placeholder="请输入要修改文章的id"/>
+        <button type="button" class="findArticle" id="submit">确定</button><br>
+        <input type="text" id="updatetitle" placeholder="文章标题"/>
+        <input type="text" id="updatetag" placeholder="文章标签"/><br>
+        <input type="text" id="updatechannel" placeholder="文章分类"/>
+        <textarea class="desc" id="updatedesc" >文章简介</textarea>
+        <textarea class="content" id="updatecontent" >文章内容</textarea>
+        <button type="button" class="updatetijiao" id="submit">提交</button>
+    </div>
+
+    <div class="addTweet">
+        <h3>新增推特</h3>
+        <textarea id="tweetContent"></textarea>
+        <button type="button" class="tweetSub">提交</button>
+    </div>
+
+    <div class="addTweet">
+        <h3>点赞推特</h3>
+        <input type="text" id="likeTweetId" placeholder="输入要点赞的推文id"/>
+        <button type="button" class="likeTweetSub">提交</button>
+    </div>
+
+    <div class="deleteTweet">
+        <h3>删除推特</h3>
+        <input type="text" id="deleteTweetId" placeholder="输入要删除的推文id"/>
+        <button type="button" class="deleteTweetSub">提交</button>
+    </div>
+
+    <div class="updateChannelBox">
+        <h3>更新频道信息</h3>
+        <input type="text" id="channelUpdateId" placeholder="输入要更新的频道id"/>
+        <button type="button" class="getChannelInfo">确定</button>
+        <input type="text" id="channelName" placeholder="频道名字"/>
+        <input type="text" id="channelDesc" placeholder="频道简介"/>
+        <input type="text" id="channelCover" placeholder="频道封面"/>
+        <button type="button" class="updateChannelBtn">提交</button>
+    </div>
+
+    <div class="updateChannelBox">
+        <h3>删除指定评论</h3>
+        <input type="text" id="deleteCommentId" placeholder="输入要删除的评论id"/>
+        <button type="button" class="deleteCommentBtn">确定</button>
+
+        <h3>删除指定子评论</h3>
+        <input type="text" id="deleteChildCommentId" placeholder="输入要删除的子评论id"/>
+        <button type="button" class="deleteChildCommentBtn">确定</button>
+        
+    </div>
+        
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        window.onload = function () {
+            let userId;
+            $.ajax({
+                url: '/api/article/getAllByPage?page=1',
+                success: (res) => {
+                    console.log(res);
+                    if (res.code === 200) {
+                        let article = res.data;
+                        for (let i = 0; i < article.length; i++) {
+                            $("#articleList").append(
+                                `<tr>
+                                    <td>${article[i].title}</td>
+                                    <td>${article[i].authorName}</td>
+                                    <td>${article[i].tags}</td>
+                                    <td>${article[i].channelName}</td>
+                                    <td>${article[i].createtime}</td>
+                                    <td>${article[i].pubtime}</td>
+                                    <td>
+                                        <button type="button">修改</button>
+                                        <button type="button">删除</button>
+                                    </td>
+                                </tr>`
+                            );
+                        }
+                    }
+                }
+            });
+        
+            $(".getChannelInfo").click(() => {
+                let cid = $("#channelUpdateId").val();
+                $.ajax({
+                    url: '/api/channel/getChannelById?cid=' + cid,
+                    type: 'GET',
+                    success: (data) => {
+                        console.log(data);
+                        $('#channelName').val(data.data.name);
+                        $('#channelDesc').val(data.data.desc);
+                        $('#channelCover').val(data.data.cover);
+                    }
+                });
+            });
+
+            $(".updateChannelBtn").click(() => {
+                let id = $("#channelUpdateId").val();
+                let name = $("#channelName").val();
+                let desc = $("#channelDesc").val();
+                let cover = $("#channelCover").val();
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/channel/updateChannel',
+                    data: {
+                        id,
+                        name,
+                        desc,
+                        cover
+                    },
+                    success: (data) => {
+                        console.log(data);
+                    }
+                })
+            })
+
+            $("#submit").click(() => {
+                let title = $("#title").val();
+                let tag = $("#tag").val();
+                let channel = $("#channel").val();
+                let author = $("#author").val();
+                let desc = $("#desc").val();
+                let content = $("#content").val();
+                $.ajax({
+                    url: '/api/article/save',
+                    type: 'POST',
+                    heads : {
+                        'content-type' : 'application/x-www-form-urlencoded'
+                    },
+                    data: {
+                        title: title,
+                        author: author,
+                        desc: desc,
+                        content: content,
+                        channel: channel,
+                        tags: tag,
+                        cover: '123'
+                    },
+                    success: (res) => {
+                        console.log(res);
+                    }
+                });
+            });
+
+            $("#loginBtn").click(() => {
+                let account = $("#account").val();
+                let password = $("#password").val();
+                $.ajax({
+                    url: '/api/author/login',
+                    type: 'POST',
+                    data: {
+                        account: account,
+                        password: password
+                    },
+                    success: (data) => {
+                        console.log(data);
+                        if (data.code === 200) {
+                            userId = data.data.id;
+                            $("#account3").val(data.data.account);
+                            $("#password3").val(data.data.password);
+                            $("#avator3").val(data.data.avator);
+                            $("#intro3").val(data.data.intro);
+                            $("#nickname3").val(data.data.nickname);
+                            $("#bgcover3").val(data.data.bgcover);
+                        }
+                    }
+                });
+            });
+
+            $("#logoutBtn").click(() => {
+                $.ajax({
+                    url: '/api/author/logout',
+                    type: 'GET',
+                    success: (data) => {
+                        console.log(data);
+                    }
+                });
+            });
+       
+            $("#registerBtn").click(() => {
+                let account = $("#account2").val();
+                let password = $("#password2").val();
+                let avator = $("#avator").val();
+                let intro = $("#intro").val();
+                let nickname = $("#nickname").val();
+                $.ajax({
+                    url: '/api/author/register',
+                    type: 'POST',
+                    data: {
+                        account,
+                        password,
+                        avator,
+                        intro,
+                        nickname
+                    },
+                    success: (data) => {
+                        console.log(data);
+                    }
+                });
+            });
+        
+            $("#updateBtn").click(() => {
+                let password = $("#password3").val();
+                let avator = $("#avator3").val();
+                let intro = $("#intro3").val();
+                let nickname = $("#nickname3").val();
+                let bgcover = $("#bgcover3").val();
+                $.ajax({
+                    url: '/api/author/updateInfo',
+                    type: 'POST',
+                    data: {
+                        id: userId,
+                        password,
+                        avator,
+                        intro,
+                        nickname,
+                        bgcover
+                    },
+                    success: (data) => {
+                        console.log(data);
+                    }
+                });
+            });
+        
+            $(".createChannelBtn").click(() => {
+                let name = $(".channelName").val();
+                let desc = $(".channelDesc").val();
+                let cover = $(".channelCover").val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/channel/addChannel',
+                    data: {
+                        name,
+                        desc,
+                        cover
+                    },
+                    success: (data) => {
+                        console.log(data);
+                    }
+                });
+            });
+        
+            $(".deleteChannelBtn").click(() => {
+                let id = $(".deleteChannel").val();
+
+                $.ajax({
+                    url: '/api/channel/deleteChannel',
+                    type: 'POST',
+                    data: {
+                        id
+                    },
+                    success: (data) => {
+                        console.log(data);
+                    }
+                });
+            });
+        
+            $(".deleteArticleBtn").click(() => {
+                let id = $(".deleteArticle").val();
+                $.ajax({
+                    url: '/api/article/delete',
+                    type: 'POST',
+                    data: {
+                        id
+                    },
+                    success: (data) => {
+                        console.log(data);
+                    }
+                });
+            });    
+
+            $(".findArticle").click(() => {
+                let id = $("#aid").val();
+                $.ajax({
+                    url: '/api/article/getOneById?id=' + id,
+                    type: 'GET',
+                    success: (data) => {
+                        if (data.code === 200) {
+                            let article = data.data;
+                            $("#updatetitle").val(article.title);
+                            $("#updatetag").val(article.tags);
+                            $("#updatechannel").val(article.channel);
+                            $("#updatedesc").val(article.desc);
+                            $("#updatecontent").val(article.content);
+                        }
+                    }
+                });
+            });
+
+            $(".updatetijiao").click(() => {
+                let id = $("#aid").val();
+                let title = $("#updatetitle").val();
+                let tag = $("#updatetag").val();
+                let channel = $("#updatechannel").val();
+                let desc = $("#updatedesc").val();
+                let content = $("#updatecontent").val();
+
+                $.ajax({
+                    url: '/api/article/update',
+                    type: 'POST',
+                    data: {
+                        id,
+                        title,
+                        tag,
+                        channel,
+                        desc,
+                        content
+                    },
+                    success: (data) => {
+                        console.log(data);
+                    }
+                })
+            })
+        
+            $(".tweetSub").click(() => {
+                let tweetContent = $('#tweetContent').val();
+                $.ajax({
+                    url: '/api/tweet/addTweet',
+                    type: 'POST',
+                    data: {
+                        content: tweetContent
+                    },
+                    success: (data) => {
+                        console.log(data)
+                    }
+                });
+            });
+       
+            $(".likeTweetSub").click(() => {
+                let id = $("#likeTweetId").val();
+                $.ajax({
+                    url: '/api/tweet/likeTweet',
+                    type: 'POST',
+                    data: {
+                        id
+                    },
+                    success: (data) => {
+                        console.log(data);
+                    }
+                });
+            });
+
+            $(".deleteTweetSub").click(() => {
+                let id = $("#deleteTweetId").val();
+                $.ajax({
+                    url: '/api/tweet/deleteTweet',
+                    type: 'DELETE',
+                    data: {
+                        id
+                    },
+                    success: (data) => {
+                        console.log(data);
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="font-size: 20px;padding: 16px 20px;background-color: #24292c;font-family: Microsoft Yahei, Helvetica, sans-serif; font-weight: normal;">
+        <a target="_blank" href="${url}" title="Blossom" style="color: #fff; text-decoration:none;">刘帅的个人博客</a>
+    </h1>
+    <div style="padding: 0 30px;">
+        <p><span>[你有新回复]</span></p>
+        <p style="font-size: 13px;color: #aaa;border-bottom: 1px solid #eee;padding-bottom: 20px;">邮件发送时间: 2019-09-15</p>
+        <div style="font-size: 15px;">
+            <p>培森儿子，您好！</p>
+            <p>刘帅 于 sss 回复了您的留言：<span style="font-size: 13px;font-weight: bold;">呃我发就饿和我不分我不服 i 我被 u 分</span></p>
+            <pre style="padding: 15px 20px; border: 1px dotted #ccc;font-family: Microsoft Yahei, Helvetica, sans-serif; margin: 20px 0;">
+                <span style="font-size: 20px;">“ </span>{{content}}<span style="font-size: 20px;"> ”</span>
+            </pre>
+            <p>您可以点击<a target="_blank" style="color: #537fd8;margin: 0 4px;">[查看详情]</a>查看完整内容</p>
+            <p>感谢您关注<a target="_blank" style="color: #537fd8;margin: 0 4px;">刘帅的个人博客</a>，若有疑问请在博客留言，我会及时回复</p>
+            <p style="color: red;margin-top: 30px;">(该邮件由系统自动发送，请勿直接回复此邮箱)</p>
+        </div>
+    </div>
+    <!-- 文章评论 -->
+    <!-- <div class="mainBox" style="padding: 0 30px;">
+        <p class="mailTitle" style="font-size: 16px; color: #333;">[新评论] 您的文章<a
+                href="http://localhost:8080/#/admin/home"
+                style="color: #537fd8; margin-left: 5px; line-height: 30px; text-decoration:none;">《{{blog_title}}》</a>有一条新评论！
+        </p>
+        <p style="font-size: 13px; color: #555; padding: 10px 0 20px 0; border-bottom: 1px solid #ddd;">邮件发送时间:
+            {{currentTime}}</p>
+        <div class="content" style="font-size: 14px; margin-top: 20px;">
+            <p style="font-family: Microsoft Yahei, Helvetica, sans-serif; font-weight: normal; color: #333;">
+                {{user_name}} 于 {{leave_time}} 评论了你的文章：</p>
+            <pre
+                style="padding: 15px 20px; border: 1px dotted #ccc;font-family: Microsoft Yahei, Helvetica, sans-serif; margin: 20px 0;"><span style="font-size: 20px;">“ </span>{{content}}<span style="font-size: 20px;"> ”</span></pre>
+            <p style="line-height: 30px; color: #333;">您可以点击<a href="{{home_url}}/article/{{id}}"
+                    style="color: #537fd8;">[查看详情]</a>查看完整内容</p>
+            <p style="line-height: 30px; color: #ff5722; margin-top: 10px;">(此邮件由系统自动发出，请勿直接回复此邮箱)</p>
+        </div>
+    </div> -->
+    <!-- 行博评论 -->
+    <!-- <div class="mainBox" style="padding: 0 30px;">
+        <p class="mailTitle" style="font-size: 16px; color: #333;">[新评论] 您的行博有一条新评论！</p>
+        <p style="font-size: 13px; color: #555; padding: 10px 0 20px 0; border-bottom: 1px solid #ddd;">邮件发送时间:
+            {{currentTime}}</p>
+        <div class="content" style="font-size: 14px; margin-top: 20px;">
+            <p style="font-family: Microsoft Yahei, Helvetica, sans-serif; font-weight: normal; color: #333;">
+                {{user_name}} 于 {{leave_time}} 评论了你的行博：</p>
+            <pre
+                style="padding: 15px 20px; border: 1px dotted #ccc;font-family: Microsoft Yahei, Helvetica, sans-serif; margin: 20px 0;"><span style="font-size: 20px;">“ </span>{{content}}<span style="font-size: 20px;"> ”</span></pre>
+            <p style="line-height: 30px; color: #333;">行博详情</p>
+            <pre
+                style="padding: 15px 20px; background-color: #eee;border: 1px solid #ccc;font-family: Microsoft Yahei, Helvetica, sans-serif; margin: 20px 0;">{{walk_blog_content}}</pre>
+            <p style="line-height: 30px; color: #333;">您可以点击<a href="{{home_url}}/mood/{{id}}"
+                    style="color: #537fd8;">[查看详情]</a>查看完整内容</p>
+            <p style="line-height: 30px; color: #ff5722; margin-top: 10px;">(此邮件由系统自动发出，请勿直接回复此邮箱)</p>
+        </div>
+    </div> -->
+    <!-- 新留言 -->
+    <!-- <div class="mainBox" style="padding: 0 30px;">
+        <p class="mailTitle" style="font-size: 16px; color: #333;">[新留言]<a href="{{home_url}}"
+                style="color: #537fd8; margin-left: 5px; text-decoration:none;">您有一条新留言，点击查看详情</a></p>
+        <p style="font-size: 13px; color: #555; padding: 10px 0 20px 0; border-bottom: 1px solid #ddd;">邮件发送时间:
+            {{currentTime}}</p>
+        <div class="content" style="font-size: 14px; margin-top: 20px;">
+            <p style="font-family: Microsoft Yahei, Helvetica, sans-serif; font-weight: normal; color: #333;">
+                {{user_name}} 于 {{leave_time}} 发表了新留言：</p>
+            <pre
+                style="padding: 15px 20px; border: 1px dotted #ccc;font-family: Microsoft Yahei, Helvetica, sans-serif; margin: 20px 0;"><span style="font-size: 20px;">“ </span>{{bbs_content}}<span style="font-size: 20px;"> ”</span></pre>
+            <p style="line-height: 30px; color: #ff5722; margin-top: 10px;">(此邮件由系统自动发出，请勿直接回复此邮箱)</p>
+        </div>
+    </div> -->
+    <!-- 新订阅 -->
+    <!-- <div class="mainBox" style="padding: 0 30px;">
+        <p class="mailTitle" style="font-size: 16px; color: #333;">[您有新订阅] “一个好人” 关注你了，<a href="{{home_url}}"
+            style="color: #537fd8; margin-left: 5px; text-decoration:none;">点击查看详情。</a></p>
+        <p style="font-size: 13px;color: #aaa;border-bottom: 1px solid #eee;padding-bottom: 20px;">邮件发送时间: 2019-09-15</p>
+        <div style="background: #eee;padding: 20px 15px;font-size: 14px;color: #537fd8;line-height: 25px;">
+            昵称：<span style="font-weight: bold;">一个好人</span><br/>
+            email：<span style="font-weight: bold;">153074457@qq.comqq.com</span>
+        </div>
+        <p>总订阅数：<em style="font-size: 20px;">99</em></p>
+        <div class="content" style="font-size: 14px; margin-top: 20px;">
+            <p style="line-height: 30px; color: #ff5722; margin-top: 10px;">(此邮件由系统自动发出，请勿直接回复此邮箱)</p>
+        </div>
+    </div> -->
+    <!-- 新文章 -->
+    <!-- <div style="padding: 0 30px;">
+        <p><span>[你有新回复]</span><a target="_blank" style="color: #537fd8;margin-left: 4px;">V8 最佳实践：从 JavaScript 变量使用姿势说起</a></p>
+        <p style="font-size: 13px;color: #aaa;border-bottom: 1px solid #eee;padding-bottom: 20px;">邮件发送时间: 2019-09-15</p>
+        <div style="font-size: 15px;">
+            <p>培森儿子，您好：</p>
+            <p>我于 <span style="color: #aaa;">2019-09-15 13:53:53</span> 发布了新文章<a target="_blank" style="color: #537fd8;margin-left: 4px;">《V8 最佳实践：从 JavaScript 变量使用姿势说起》</a></p>
+            <p style="padding: 20px 16px;line-height: 24px;background-color:#eee;border:1px solid #ccc;">
+                在弱类型语言 JavaScript 中，变量上能有多少优化窍门？本文从最基础的变量类型说起，带你深入 V8 底层类型变换与优化机制。真正的老司机，一行代码可见一斑。以后你可以说，我写的代码，连变量声明都比你快…
+            </p>
+            <p>文章分类：V8</p>
+            <p>标签：Javascript,进阶知识,底层机制,V8</p>
+            <p>您可以点击<a target="_blank" style="color: #537fd8;margin: 0 4px;">[查看详情]</a>查看文章的完整内容</p>
+            <p>感谢您关注<a target="_blank" style="color: #537fd8;margin: 0 4px;">刘帅的个人博客</a>，若有疑问请在博客留言，我会及时回复</p>
+            <p style="color: red;margin-top: 30px;">(该邮件由系统自动发送，请勿直接回复此邮箱)</p>
+        </div>
+    </div> -->
+</body>
+</html>

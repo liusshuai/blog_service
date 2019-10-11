@@ -1,0 +1,30 @@
+{
+  "name": "blog_server",
+  "version": "1.0.0",
+  "description": "liushuai's blog server by node + koa + mysql.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node index"
+  },
+  "keywords": [
+    "node",
+    "koa",
+    "mysql"
+  ],
+  "author": "liushuai",
+  "license": "ISC",
+  "dependencies": {
+    "busboy": "^0.3.0",
+    "koa": "^2.6.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.10.0",
+    "koa-static": "^5.0.0",
+    "moment": "^2.24.0",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.2",
+    "nodemailer": "^6.0.0",
+    "sequelize": "^4.41.0"
+  }
+}
