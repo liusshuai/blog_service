@@ -251,6 +251,14 @@ class TweetServer {
             }
         });
 
+        await tweetModel.update({
+            likenum: data.likenum + 1
+        }, {
+            where: {
+                id
+            }
+        });
+
         data.imgs = imgs;
         data.setDataValue('comments', comments);
 
