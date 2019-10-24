@@ -72,6 +72,7 @@ class ArticleController {
             result.set('code', data.code);
             result.set('msg', data.msg);
         } catch (err) {
+            console.log(err);
             result.set('code', CONSTANTS.FAILD_CODE);
             result.set('msg', CONSTANTS.FAILD_MSG);
         }

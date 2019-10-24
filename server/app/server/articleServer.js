@@ -8,7 +8,7 @@ const CONSTANTS = require('../constants');
 const util = require('../util');
 const Sequelize = require('sequelize');
 const limit = CONSTANTS.ARTICLE_LIMIT;
-
+const push = require('../util/jPush');
 const mail = require('../../mail/index');
 const blogFollowModel = require('../model/blogfollowerModel');
 
@@ -30,7 +30,7 @@ async function getArticle(params) {
             attributes: { exclude: ['password', 'bgcover'] }
         }, {
             model: channelModel,
-            attributes: ['id', 'name']
+            attributes: ['id', 'name', 'cover']
         }],
         attributes: {
             exclude: ['content']
@@ -208,6 +208,12 @@ class ArticleServer {
                         });
                     }, perMailTime * index);
                 }
+
+                push('New Article', `新文章《${blog.title}》`, blog.desc, {
+                    'type': 'article',
+                    'title': blog.title,
+                    'key': blog.id
+                });
             }
 
             return {
@@ -328,6 +334,11 @@ class ArticleServer {
                                     });
                                 }, perMailTime * index);
                             }
+
+                            push('New Article', `新文章《${blog.title}》`, blog.desc, {
+                                'type': 'article',
+                                'key': blog.id
+                            });
                         }
 
                     } else {

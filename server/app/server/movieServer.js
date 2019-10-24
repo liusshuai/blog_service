@@ -1,6 +1,7 @@
 const movieModel = require('../model/movieModel');
 const blogCommentModel = require('../model/blogCommentModel');
 const CONSTANTS = require('../constants');
+const push = require('../util/jPush');
 const util = require('../util');
 const LIMIT = 20;
 
@@ -63,6 +64,10 @@ class MovieServer {
         }
 
         await movieModel.create(params);
+
+        push('New Source', '有新资源更新啦', params.name, {
+            'type': 'source'
+        });
 
         return {
             code: CONSTANTS.SUCCESS_CODE,

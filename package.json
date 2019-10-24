@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "busboy": "^0.3.0",
+    "jpush-async": "^4.0.2",
     "koa": "^2.6.1",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",

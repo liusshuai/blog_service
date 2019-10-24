@@ -9,6 +9,7 @@ const comment = commentController.name;
 const change = userInfoChangeController.name;
 
 // home
+router.get('/' + home + '/getAppInfo', homeController.getAppVersion);
 router.get('/' + home + '/getdata', homeController.getArticleAndAlbum);
 
 // comment
