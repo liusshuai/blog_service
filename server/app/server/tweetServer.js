@@ -303,15 +303,47 @@ class TweetServer {
         }
     }
 
+    // 设置bibi是否可见
+    async changeTweetShowType (ctx) {
+        const id = ctx.request.body.id;
+        const show = ctx.request.body.show;
+        let data = await tweetModel.findByPk(id);
+        if (data) {
+            await tweetModel.update({
+                show: show
+            }, {
+                where: {
+                    id
+                }
+            });
 
+            return {
+                code: CONSTANTS.SUCCESS_CODE,
+                msg: CONSTANTS.SUCCESS_MSG
+            }
+        } else {
+            return {
+                code: CONSTANTS.NODATA_CODE,
+                msg: CONSTANTS.TWEET_NOT_EXITS
+            }
+        }
+    }
 
     async getMyTweet (ctx) {
         const page = ctx.query.page || 1;
-        const limit = 10; 
+        const limit = 10;
+        const where = {
+            authorId: 17
+        };
+        if (ctx.query.type === 'all') {
+            if (!util.checkSession(ctx)) {
+                return util.notLoginResponse();
+            }
+        } else {
+            where.show = 1;
+        }
         const data = await tweetModel.findAll({
-            where: {
-                authorId: 17
-            },
+            where,
             order: [
                 ['pubtime', 'DESC']
             ],
