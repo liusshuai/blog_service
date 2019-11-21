@@ -59,7 +59,14 @@ const boardModel = sequelize.define('tweet', {
         allowNull: true,
         defaultValue: 0,
         comment: '点赞数'
-    }
+    },
+    show: {
+        field: 'show',
+        type: Sequelize.TINYINT(2),
+        allowNull: false,
+        defaultValue: 0,
+        comment: '是否可见'
+    },
 }, {
     freezeTableName: true, // true表示可以自定义表名
     tableName: 'tweet' // 自定义表名

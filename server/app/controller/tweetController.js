@@ -174,6 +174,23 @@ class ChannelController {
         };
     }
 
+    async changeTweetShowType(ctx) {
+        let result = new Map();
+        try {
+            let data = await tweetServer.changeTweetShowType(ctx);
+            result.set('code', data.code);
+            result.set('msg', data.msg);
+        } catch (err) {
+            result.set('code', CONSTANTS.FAILD_CODE);
+            result.set('msg', CONSTANTS.FAILD_MSG);
+        }
+
+        ctx.body = {
+            code: result.get('code'),
+            msg: result.get('msg')
+        };
+    }
+
 
     async getMyTweet(ctx) {
         let result = new Map();

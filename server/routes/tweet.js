@@ -12,6 +12,7 @@ router.get('/' + name + '/getMyConcernAuthorTweet', tweetController.getMyConcern
 router.post('/' + name + '/addTweet', tweetController.addTweet);
 router.post('/' + name + '/likeTweet', tweetController.likeTweet);
 router.post('/' + name + '/deleteTweet', tweetController.deleteTweet);
+router.post('/' + name + '/changeShowType', tweetController.changeTweetShowType);
 
 
 module.exports = router;
