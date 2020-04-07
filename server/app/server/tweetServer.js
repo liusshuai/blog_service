@@ -351,9 +351,7 @@ class TweetServer {
             offset: (page - 1) * limit
         });
 
-        const total = await tweetModel.count({
-            where: { authorId: 17 }
-        });
+        const total = await tweetModel.count({ where });
 
         let comments = 0;
         let imgs = [];

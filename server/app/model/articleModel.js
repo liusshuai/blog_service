@@ -33,8 +33,14 @@ const articleModel = sequelize.define('articles', {
     content: {
         field: 'content',
         type: Sequelize.TEXT,
-        allowNull: false,
+        allowNull: true,
         comment: '内容'
+    },
+    outurl: {
+        field: 'outurl',
+        type: Sequelize.STRING(500),
+        allowNull: true,
+        comment: '外部链接'
     },
     channelId: {
         field: 'channel',
@@ -53,6 +59,12 @@ const articleModel = sequelize.define('articles', {
         type: Sequelize.STRING(500),
         allowNull: true,
         comment: '文章封面'
+    },
+    coverpos: {
+        field: 'covertype',
+        type: Sequelize.TINYINT(2),
+        allowNull: true,
+        comment: '文章封面位置'
     },
     views: {
         field: 'views',

@@ -165,10 +165,12 @@ class ArticleServer {
                 title: params.title,
                 authorId: ctx.session.user.id,
                 desc: params.desc || '',
-                content: params.content,
+                content: params.content || '',
+                outurl: params.outurl || '',
                 channelId: params.channel,
                 tags: params.tags,
                 cover: params.cover || '',
+                coverpos: params.coverpos,
                 show: params.show
             });
 
@@ -345,10 +347,12 @@ class ArticleServer {
                         await articleModel.update({
                             title: params.title,
                             desc: params.desc || '',
-                            content: params.content,
+                            content: params.content || '',
+                            outurl: params.outurl || '',
                             channelId: params.channel,
                             tags: params.tags,
                             cover: params.cover || '',
+                            coverpos: params.coverpos,
                             show: params.show || 0,
                             pubtime: new Date()
                         }, {
